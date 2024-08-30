@@ -1,0 +1,31 @@
+-N Tier Architecture (N Katmanlý Mimari) Avantajlarý ;
+	* Hata yönetimini kolaylaþtýrýr.
+	* Eriþilebilirlik kolaylaþýr.
+	* Kod tekrarý azalýr.
+	* Sürdürülebilirlik ve projede büyük çaplý deðiþimler kolaylaþýr.
+	* Güvenlik artar.
+
+-N katmanlý mimaride temel olarak 4 katman bulunmaktadýr. Bunlar;
+	* Entity Layer
+	* Data Access Layer
+	* Business Layer
+	* Presentation Layer
+- Projenin büyüklüðüne göre baþka katmanlar da eklenebilir. Bunlara birkaç örnek olarak;
+	* Api için katman
+	* Data Transfer object Layer 
+
+-Entity layer: Bu katmanda tablolar ve sütunlar tutulur.
+-Data Access Layer: Bu katmanda CRUD iþlemleri yapýlýr.
+-Business Layer: Bu katmanda yetki kontrolleri ve validasyon kontrolleri yapýlýr.
+-Presentation Layer: Bu katmanda arayüz bulunur. UI iþlemleri yapýlýr.
+
+-Code First yapýsý: Projedeki database iþlemlerinin hepsi kod tarafýnda yapýlýr. Sql bu durumda sadece bir Veri Tabaný dýr. 
+- Katmanlarda iki tane temel dosya oluþturulur. Concrete ve Abstract. Concrete klasörü içinde projede bulunacak sýnýflar tutulur. Abstract da ise projede bulunacak interfaceler tutulur.
+
+-Access Modifier (Eriþim Belirleyiciler): Temel de 4 tane vardýr. Bunlar;
+	-Public: Her yerden eriþilebilmesini saðlar.
+	-Private: Sadece bulunduðu class veya interface den içinde eriþilebilir.
+	-internal: Sadece bulunduðu katmandan eriþim saðlanýr.
+	-protected: Bulunduðu sýnýf ve bu sýnýfý miras alan sýnýflar eriþebilir.
+
+-Katmanlý mimari projelerinde katmanlar içinde sýnýflar tek baþýna oluþturulmaz. Katmanlar içinde klasörler oluþturulur. Oluþan klasörlerde sýnýflar oluþturulur. Bu sebeple projede default oluþan sýnýflarý sildik.

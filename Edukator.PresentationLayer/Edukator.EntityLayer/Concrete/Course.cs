@@ -14,6 +14,11 @@ namespace Edukator.EntityLayer.Concrete
         public string ImageURL { get; set; }
         public decimal Price { get; set; }
         public int Review { get; set; }
+        public int CategoryID { get; set; }
+        public Category Category { get; set; }
+        //Code first de ilişkili alan eklediğimizde CategoryID gibi, onun bir altına property olarak o alan hangi class'dan geliyorsa(Category) o class türünde bir prop belirtilmeli. Bunun yapılma sebebi ise CategoryID alanının ilişkili olduğunu göstermek için.
+
+        //Db ye Sadece CategoryID alanı yansır. Category türünde oluşturulan alan db ye yansımaz!
 
     }
 }

@@ -29,3 +29,42 @@
 	-protected: Bulunduðu sýnýf ve bu sýnýfý miras alan sýnýflar eriþebilir.
 
 -Katmanlý mimari projelerinde katmanlar içinde sýnýflar tek baþýna oluþturulmaz. Katmanlar içinde klasörler oluþturulur. Oluþan klasörlerde sýnýflar oluþturulur. Bu sebeple projede default oluþan sýnýflarý sildik.
+
+-Code First de Sýnýflar-->Tablolara, Propertyler ise Sütunlara dönüþür.
+
+	Code First de db oluþturmak için ihtiyacýmýz olan paketler;
+-EntityFramework Core: EF ile ilgili iþlemleri yapar.
+-EntityFramework Tools:Migration iþlemlerini gerçekleþtirmemizi saðlar.
+-EntityFramework Design:Migration iþlemlerini gerçekleþtirmemizi saðlar.
+-Sql Server: Sql Server'ý kullanmamý saðlar.
+
+-Migration: Göç anlamýna gelir. Verileri Visual Studio dan Sql Server'a taþýmamýzý saðlar.
+
+-DAL Katmanýndaki Concrete klasöründe;
+	* Entityler, baðlantý adresleri tutulur.
+-DAL Katmanýndaki Abstract klasöründe;
+	* Interfaceler tutulur.
+
+-DbContext Sýnýfý: EF de bazý method ve özellikleri kullanmamý saðlayan bir sýnýf.
+
+			---------------REFERANSLAR------------
+-Referans Verme: Referans aldýðýn katmanýn içindeki sýnýf ,method ya da özelliklerini kullanmak amacýyla referans verilir.
+
+-Katmanlar En temel katmandan ileriye doðru sýrasýyla aþadaki gibidir;
+
+* EntityLayer:En temel katmandýr. Tüm katmanlar bu katmana eriþebilir. 
+* DataAccessLayer : Bu katman sadece Business da ve presentation katmanlarýnda kullanýlabilir.       
+* BusinessLayer: Bu katman da sadece Presentation katmanýnda kullanýlabilir.      
+* PresentationLayer: Bu katmana yukarýdaki 3 katman da diðer katmanlarda eklenebilir. Baþka bir katmana referans edilemez!
+
+-Katmanda Referans Nasýl Verilir: Referans ekleyeceðiniz katmanýn üzerine sað týk ise Add>Project Reference seçilerek istenilen katman eklenebilir.
+
+-Migration Ekleme: Migration eklenen consol için View>Other Windows>Package Manager Console seçilmeli
+
+- NOTT: Migration oluþturulmadan önce gelen ekrandaki Default Project kýsmýna database baðlantý adresi hangi katmanda ise o katmanýn alana seçilmesi gerekir.
+
+- add-migration migration_adý : Migration eklemeye yarar.
+- update-database: Bu ise eklenen migration'ý db de gözükmesi için
+
+- NOT: Migration isimleri genelde yaptýðý isimleri nitelemeli. Boþ isimler olmamalý, anlaþýlýr olmalý!
+ 

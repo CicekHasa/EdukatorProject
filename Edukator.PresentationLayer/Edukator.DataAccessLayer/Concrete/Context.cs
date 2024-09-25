@@ -21,5 +21,8 @@ namespace Edukator.DataAccessLayer.Concrete
         public DbSet<Category> Categories { get; set; }
         public DbSet<ContactInfo> ContactInfos { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
+        public DbSet<Mail> Mail { get; set; }
     }
 }

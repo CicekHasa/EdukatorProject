@@ -3,14 +3,16 @@ using Edukator.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Edukator.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20240925164417_mig_add_table_service")]
+    partial class mig_add_table_service
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,42 +122,6 @@ namespace Edukator.DataAccessLayer.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Courses");
-                });
-
-            modelBuilder.Entity("Edukator.EntityLayer.Concrete.CustomerFeedback", b =>
-                {
-                    b.Property<int>("CustomerFeedbackID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Job")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NameSurname")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CustomerFeedbackID");
-
-                    b.ToTable("CustomerFeedbacks");
-                });
-
-            modelBuilder.Entity("Edukator.EntityLayer.Concrete.Mail", b =>
-                {
-                    b.Property<int>("MailID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("MailName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MailID");
-
-                    b.ToTable("Mail");
                 });
 
             modelBuilder.Entity("Edukator.EntityLayer.Concrete.Service", b =>

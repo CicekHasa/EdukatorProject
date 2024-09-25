@@ -67,4 +67,35 @@
 - update-database: Bu ise eklenen migration'ý db de gözükmesi için
 
 - NOT: Migration isimleri genelde yaptýðý isimleri nitelemeli. Boþ isimler olmamalý, anlaþýlýr olmalý!
+
+- Repository Design Pattern: Bir tasarým desenidir. Projede yapýlacak CRUD iþlemlerinin arka planda tutulmasý için generic yapýda oluþturulup kalýtýlarak kullanýlmayý saðlar.
  
+ -Business katmanýnda validasyon kurallarý kontrolü saðlanýr.
+ -Business katmanýndaki interfaceler (Abstract klasörü içinde) Service olarak adlandýrýyor,
+ sýnýflar(Concrete klasörü içinde) ise Manager olarak tanýmlanýr. Genel olarak bu þekilde oluþturuluyor.
+
+ -Dependency Injection: Classlar arasýnda baðýmlýlýðý en aza indirmek için kullanýlan programlama tekniðidir.
+
+					Projedeki akýþýn genel özeti
+1- Entity katmanýnda Concrete klasörü altýnda entityler tanýmlanýr.
+2-Data Access katmaný içindeki Concrete klsörü içinde Context sýnýfý oluþturarak sqlconnection ve entity katmanýnda oluþturduðum sýnýflar dbset de tanýmlanýr.
+3-Context içinde entityler tanýmlandýktan sonra migration ile db ye tablolar oluþturulur.
+4-Data Access katmaný içindeki Abstract klasörü altýnda Generic bir interface oluþturulur.
+5-Data Access katmaný içindeki Abstract klasörü altýnda entitylere özel interfaceler oluþturularak generic interface miras alýnýr.
+6- Data Access katmaný içindeki Repositories klasörü altýnda Generic Repository design paterni ile CRUD iþlemleri için Generic bir class oluþturulur.
+7- Oluþturulan sýnýf Data Access katmanýndaki Abstract klasöründe oluþturduðumuz generic interface'i kalýtým yapar ve O interface içindeki methodlarý sýnýfa implemente ederek doldurur.
+8-Data Access Layer katmanýnda Repositories klasöründe genericrepo sýnýfý bittikten sonra ayný katmanda Entity Framework klasöründe her entity'e özel sýnýf oluþturularak Repositories klasöründeki sýnýf ile kalýtým yapar.
+9-Business katmanýndaki Abstract klasöründe Generic bir interface servisi oluþturulur ve Data Access katmanýndaki Abstract klasöründeki generic interface içindeki methodlar kopyalanarak baþýna bir T harfi konur.(Diðer katman ile karýþmamasý için!)
+10- Business daki Abstract klasöründe Generic interface servisi oluþturduktan sonra her entity için bir interface servisi oluþturulup generic interface servisinden miras alýnýr.
+11-Business katmanýndaki Abstract da servisler kurulduktan sonra ayný katmanda Concrete klasöründe de her entity'e özel Manager sýnýflar oluþturulur ve Generic interface servisinden miras alýnarak oradaki methodlar o sýnýflara implemente edilir.
+12- Oluþturulan manager sýnýfýnda o entity'nin Data Access katmanýndaki interface inden nesne oluþturularak oradaki methodlar kullanýlýr.
+13- Presentation katmanýna gelip oluþturulan controllerlarda istenilen entity'e ait Business katmanýndaki Service çaðýrýlýr.
+
+
+
+
+
+An unhandled exception occurred while processing the request.
+InvalidOperationException: Unable to resolve service for type 'Edukator.BusinessLayer.Abstract.ICategoryService' while attempting to activate 'Edukator.PresentationLayer.Controllers.CategoryController'. HATASI:
+
+Bu hatanýn sebebi, Constructor uygulanan sýnýflarýn arka tarafta (Startup.cs de ConfigureServices methodunda) çaðýrýlmasý gerekli!

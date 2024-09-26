@@ -1,0 +1,36 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Edukator.PresentationLayer.Controllers
+{
+    public class AdminLayoutController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public PartialViewResult PartialHead()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialSpinner()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialSideBar()//Sol Menü
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialNavbar()//Üst Menü
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialFooter()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialScript()
+        {
+            return PartialView();
+        }
+    }
+}

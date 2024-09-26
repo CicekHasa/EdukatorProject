@@ -31,9 +31,10 @@ namespace Edukator.PresentationLayer
             services.AddDbContext<Context>();//Veri kaynaðý ekleniyor.
             //Kayýt ekleniyor aþaðýda. Mapleme gibi düþünülebilir.
             //ICategoryDal çaðýrýldýðýnda EfCategoryDal'ý çalýþtýrsýn.
-            services.AddScoped<ICategoryDal, EfCategoryDal>();
-            //ICategoryService çaðýrýldýðýnda CategoryManager'ý çalýþtýrsýn.
+            services.AddScoped<ICategoryDal, EfCategoryDal>();//ICategoryService çaðýrýldýðýnda CategoryManager'ý çalýþtýrsýn.
             services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICourseDal,EfCourseDal>();
+            services.AddScoped<ICourseService,CourseManager>();
 
 
             services.AddControllersWithViews();

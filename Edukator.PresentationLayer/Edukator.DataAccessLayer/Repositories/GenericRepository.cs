@@ -46,6 +46,7 @@ namespace Edukator.DataAccessLayer.Repositories
         {
             var context = new Context();
             context.Update(t);
+            context.SaveChanges();
         }
     }
 }

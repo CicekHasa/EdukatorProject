@@ -99,3 +99,6 @@ An unhandled exception occurred while processing the request.
 InvalidOperationException: Unable to resolve service for type 'Edukator.BusinessLayer.Abstract.ICategoryService' while attempting to activate 'Edukator.PresentationLayer.Controllers.CategoryController'. HATASI:
 
 Bu hatanýn sebebi, Constructor uygulanan sýnýflarýn arka tarafta (Startup.cs de ConfigureServices methodunda) çaðýrýlmasý gerekli!
+
+
+- asp-for özelliði: Asp.Net MVC de Html.Helper, Asp.Net Core da tek helperlar vardýr. Genelde inputlar ile kullanýlýyor. View de tanýmladýðýn modele ait alanlara ulaþýþabiliyor.

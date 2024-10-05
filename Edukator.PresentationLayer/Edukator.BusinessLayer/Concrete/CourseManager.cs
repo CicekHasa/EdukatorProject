@@ -28,6 +28,11 @@ namespace Edukator.BusinessLayer.Concrete
            return _courseDal.GetByID(id);
         }
 
+        public List<Course> TGetCourseWithCategory()
+        {
+            return _courseDal.GetCoursesWithCategory();
+        }
+
         public List<Course> TGetList()
         {
             return _courseDal.GetList();
@@ -41,6 +46,7 @@ namespace Edukator.BusinessLayer.Concrete
         public void TUpdate(Course t)
         {
            _courseDal.Update(t);
+            
         }
     }
 }

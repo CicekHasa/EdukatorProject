@@ -102,3 +102,14 @@ Bu hatanýn sebebi, Constructor uygulanan sýnýflarýn arka tarafta (Startup.cs de 
 
 
 - asp-for özelliði: Asp.Net MVC de Html.Helper, Asp.Net Core da tek helperlar vardýr. Genelde inputlar ile kullanýlýyor. View de tanýmladýðýn modele ait alanlara ulaþýþabiliyor.
+
+-textarea tag'ý: View tarafýnda kullanýlýr. Uzun birkaç satýrlýk açýklamalar için text yerine kullanýlabilir. Bu tag içinde rows özelliði kaç satýr maks yazman gerektiðini belirlemeni saðlar.
+
+-Asp.Net Core da iliþkili tablolardaki alanlarý view de görüntüleyebilmek için iliþkili tabloya view de direk eriþerek o tablodaki deðeri getiremezsin. 
+Örnek: <td>@item.Category.CategoryName</td> (Bu .Net FrameWork de geçerli bir kullaným!)
+
+-Asp.Net Core da ise bu þekilde iliþkili tablolardaki verileri view kýsmýnda görüntüleyebilmek için 'include' methodunu kullanman gerekiyor.
+Include methodu sana birden fazla iliþkili olan alanlarý view kýsmýnda getirmeni saðlar.
+EfCourseDal.cs içinde örnek bulunmakta!
+
+-Bir interface'e interface kalýtým yaparken kalýtým yaptýðýnýz interface içindeki methodlarý implemente etmeniz gerekmiyor, ama bir sýnýfa bir interface kalýtým yaptýðýnda o interface içindeki methodlarý kalýtým yaptýðýnýz sýnýfta implemente etmek zorundasýnýz!

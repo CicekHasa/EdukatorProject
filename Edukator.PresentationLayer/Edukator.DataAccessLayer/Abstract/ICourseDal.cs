@@ -18,5 +18,8 @@ namespace Edukator.DataAccessLayer.Abstract
 
 
         //Yukarıda oluşturduklarımızı Generic interface de oluşturup oradan kalıtıyoruz.
+
+        //Sadece bu entity'ye özel bir method! bu sebeple GenericRepo içinde yazmadık.
+        List<Course> GetCoursesWithCategory();
     }
 }

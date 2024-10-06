@@ -113,3 +113,7 @@ Include methodu sana birden fazla iliþkili olan alanlarý view kýsmýnda getirmeni
 EfCourseDal.cs içinde örnek bulunmakta!
 
 -Bir interface'e interface kalýtým yaparken kalýtým yaptýðýnýz interface içindeki methodlarý implemente etmeniz gerekmiyor, ama bir sýnýfa bir interface kalýtým yaptýðýnda o interface içindeki methodlarý kalýtým yaptýðýnýz sýnýfta implemente etmek zorundasýnýz!
+
+-OrderByDescending(): EF'in bir methodudur. Kayýtlarý z-a 'ya sýralar.
+-Take():Ef'in bir methodudur. Verdiðin koþuldaki kayýtlardan kaç tane kayýt dönmesi gerektiðini belirtir.
+

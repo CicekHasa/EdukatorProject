@@ -1,4 +1,5 @@
 ﻿using Edukator.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace Edukator.DataAccessLayer.Concrete
 {
-    public class Context : DbContext
+    //AppUser entitysini ekleme sebebim AspNetUser tablosuna AppUser entity'si içindeki alanları eklemesi için!
+    //AppRole ve int parametrelerini de ekleme sebebim, AspNetUser iel AspNetRole tablolarındaki id alanlarının string yerine int gelmesi için!
+    public class Context : IdentityDbContext<AppUser,AppRole,int>//(IdentityDbContext de DbContext sınıfından miras alıyor.)
     {
         //Bağlantı adresi buradan alınacak!
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

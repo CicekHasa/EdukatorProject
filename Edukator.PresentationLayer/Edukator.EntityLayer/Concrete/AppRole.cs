@@ -1,0 +1,13 @@
+﻿using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Edukator.EntityLayer.Concrete
+{
+    public class AppRole:IdentityRole<int>//AspNetRole tablosundaki id alanının değişken tipi int olması için
+    {
+    }
+}

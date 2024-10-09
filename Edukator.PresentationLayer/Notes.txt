@@ -117,3 +117,62 @@ EfCourseDal.cs içinde örnek bulunmakta!
 -OrderByDescending(): EF'in bir methodudur. Kayýtlarý z-a 'ya sýralar.
 -Take():Ef'in bir methodudur. Verdiðin koþuldaki kayýtlardan kaç tane kayýt dönmesi gerektiðini belirtir.
 
+
+- Identity:Microsoft tarafýndan geliþtirilmiþ bir kütüphanedir. Register, Login ve roll iþlemlerini kolaylýkla yapmayý saðlayan bir kütüphanedir.
+Oturum açma iþlemleri için bu kütüphane kullanýlýr. Bu kütüphaneyi Presentation,Entity ve Data Access katmanlarýna identity için gerekli paketleri yüklüyorum.
+
+-Gerekli Paketler: * Microsoft.AspNetCore.Identity , * Microsoft.AspNetCore.Identity.EntityFrameworkCore
+-Paketler katmanlara yüklendikten sonra DataAccess katmanýnda Context sýnýfýndaki miras olan DbContext sýnýfý yerine IdentityDbContext sýnýfý miras alýnýr. Zaten bu sýnýfýn içinde de DbContext sýnýfý miras alýyor.
+-Sonrasýnda ise package console dan yeni bir migration oluþturulur ve db güncellenir. Sonrasýnda AspNet.Identity ile db ye 7 tane ekstra tablo yüklenir. Bunlar;
+	*AspNetRoles
+	*AspNetUsers
+	*AspNetRoleClaims
+	*AspNetUserClaims
+	*AspNetUserLogins
+	*AspNetUserRoles
+	*AspNetUserTokens
+
+-Package console da migration eklemeden önce DataAccess katmanýný seçmemizin nedeni, DbContext veya IdentityDbContext sýnýfýný o katmanda kullandýðýmýzdan dolayý!
+-Ýdentity kütüphanesi ile gelen tablolarý kaldýrmak için Context sýnýfýnda tekrar DbContext den miras alarak migration eklemelisiniz.
+-Ýdentity ile gelen tablolardan AspNetUsers tablosunda gelen alanlara ben de ekstra kendi istediðim alanlarý da eklemek istersem bunun için þu þekilde yapabilirim;
+	-Eklemek istediðim alanlarý entity katmanýnda sýnýf olarak oluþturur ve alanlarý içerisine yazarým o sýnýfý da IdentityUser sýnýfýndan miras aldýrarak hem AspNetUsers tablosundaki alanlar hemde benim eklemek istediðim alanlar bir tablo içerisinde olur.
+
+-[StringLength(100)]: Bu entity katmanýnda property eklenirken üstüne konulan bir attribüt dür. DataAnnotation namespace'i ile gelir. Bunun altýna yazdýðýn property'nin kaç karakter olduðunu bu attribüt ile belirleyebilirsin. Örneðin 100 gibi.
+
+-DbContext mirasý ile entity de oluþturulan string bir property db ye default olarak max karakter olarak kayýt edilir. IdentityDbContext ile miras alýnan entity deki string deðiþkenli property ise default 256 karakter olarak db ye kayýt edilir.
+
+-IdentityDbContext ile gelen 7 tablodan AspNetUsers ile AspNetRoles tablolarýndaki id alanlarý default string gelmektedir. Bu alanlarýn deðiþken tipini int deðiþkenine dönüþtürmek için AspNetUsers için IdentityUser class'ýný miras olarak kullandýðým AppUser da ve IdentityUser'ý miras alýrken þu þekilde kullanmalýyým (IdentityUser<int>)
+AspNetRoles için de bu id alanýnýn int olmasý için bir entity katmanýnda class oluþturup sonrasýnda da IdentityRole sýnýfý ile miras almalýyým(IdentityRole<int>)
+Sonrasýnda Context de IdentityDbContext miras alýrken de ilk parametreye AspNetUser'ý miras aldýðým class'ý (AppUser), ikinci parametrede ise AspNetRoles tablosunu miras aldýðým sýnýfý(AppRole) sýnýfý son parametrede ise primary alanlarýnýn hangi deðiþken olmasý gerektiðini belirtip migration oluþturmalýyým.
+
+NOT: IdentityDbContext ile gelen diðer tablolardaki id alanlarý için de benzer örnekler yapýp IdentityDbContext'in 3. overload'ýnda tek tek tüm tablolarý yazarak id alanlarýný int'e çevrilebilir!
+
+										----------- SOLID-----------
+SOLID, yazýlým geliþtirmede daha esnek, bakým yapýlabilir ve geniþletilebilir kod yazmayý amaçlayan beþ temel tasarým ilkesinin baþ harflerinden oluþan bir akronimdir. SOLID ilkeleri, Robert C. Martin (Uncle Bob) tarafýndan tanýmlanmýþtýr ve nesne yönelimli programlama (OOP)'da yazýlým tasarým kalitesini artýrmayý amaçlar.
+
+Her bir ilkenin açýklamasý þu þekildedir:
+
+1. S - Single Responsibility Principle (Tek Sorumluluk Ýlkesi)
+Her sýnýfýn yalnýzca bir sorumluluðu olmalýdýr. Baþka bir deyiþle, bir sýnýf yalnýzca tek bir iþ yapmalý ve o iþi tam olarak yerine getirmelidir. Bu sayede sýnýfýn deðiþiklik gerektiren tek bir sebebi olur.
+
+Örnek: Eðer bir sýnýf hem dosya okuma iþini yapýyor hem de verileri iþleyip analiz ediyorsa, bu ilke ihlal edilmiþ olur. Bu durumda, dosya okuma iþlemi bir sýnýfta, veri iþleme ise baþka bir sýnýfta yapýlmalýdýr.
+2. O - Open/Closed Principle (Açýk/Kapalý Ýlkesi)
+Yazýlým bileþenleri (sýnýflar, modüller, fonksiyonlar vb.) geniþletilmeye açýk ama deðiþtirilmeye kapalý olmalýdýr. Yani, bir sýnýfa yeni bir davranýþ eklemek için sýnýfý deðiþtirmek yerine, sýnýfý geniþleterek (inheritance veya polymorphism kullanarak) yeni iþlevsellik eklenmelidir.
+
+Örnek: Bir Payment sýnýfý varsa ve farklý ödeme türleri eklemek isteniyorsa, var olan sýnýfý deðiþtirmek yerine yeni bir ödeme türü ekleyen alt sýnýflar oluþturulmalýdýr.
+3. L - Liskov Substitution Principle (Liskov'un Yerine Geçme Ýlkesi)
+Bir alt sýnýf, her zaman türetilmiþ olduðu üst sýnýfýn yerine geçebilmelidir. Yani, üst sýnýfýn kullanýldýðý her yerde alt sýnýf da sorunsuzca kullanýlabilmelidir. Alt sýnýf, üst sýnýfýn davranýþlarýný bozacak þekilde davranmamalýdýr.
+
+Örnek: Bir Animal üst sýnýfý varsa ve bir Bird alt sýnýfý oluþturulmuþsa, her Bird nesnesi, Animal nesnesinin kullanýldýðý her yerde kullanýlabilir olmalýdýr. Ancak, Bird sýnýfý uçma yeteneði eklerken Animal'ýn temel kurallarýný ihlal etmemelidir.
+4. I - Interface Segregation Principle (Arayüz Ayrýmý Ýlkesi)
+Sýnýflar, ihtiyacý olmayan iþlevlere sahip büyük ve geniþ arayüzler (interface) yerine, kendileri için gerekli olan özelleþmiþ küçük arayüzleri kullanmalýdýr. Baþka bir deyiþle, bir sýnýfýn gereksiz iþlevlere sahip bir arayüzü uygulamamasý gerekir.
+
+Örnek: Bir sýnýf IMultiFunctionDevice (yazýcý, tarayýcý, faks gibi çok iþlevli cihaz) arayüzünü uygulamak yerine, IPrinter, IScanner, IFax gibi küçük ve spesifik arayüzleri uygulamalýdýr. Böylece, sadece ihtiyacý olan iþlevleri kullanmýþ olur.
+5. D - Dependency Inversion Principle (Baðýmlýlýklarýn Ters Çevrilmesi Ýlkesi)
+Üst düzey modüller (yüksek seviye sýnýflar), alt düzey modüllere doðrudan baðýmlý olmamalýdýr. Bunun yerine her iki modül de soyutlamalara (abstractions) baðýmlý olmalýdýr. Yani, kod baðýmlýlýklar üzerinde deðil, arayüzler veya soyut sýnýflar üzerinde çalýþmalýdýr.
+
+Örnek: Bir UserService sýnýfý doðrudan bir EmailService'e baðýmlý olmamalýdýr. Bunun yerine bir IMessageService arayüzüne baðýmlý olmalýdýr, böylece farklý mesajlaþma yöntemleri (SMS, e-posta, vb.) kolayca eklenebilir.
+
+
+
+

@@ -174,5 +174,20 @@ Sýnýflar, ihtiyacý olmayan iþlevlere sahip büyük ve geniþ arayüzler (interface) 
 Örnek: Bir UserService sýnýfý doðrudan bir EmailService'e baðýmlý olmamalýdýr. Bunun yerine bir IMessageService arayüzüne baðýmlý olmalýdýr, böylece farklý mesajlaþma yöntemleri (SMS, e-posta, vb.) kolayca eklenebilir.
 
 
+* UserManager sýnýfý: Identity kütüphanesi içerisindeki methodlarý kullanmamý saðlayan bir sýnýftýr.
+* ViewModel yapýsý: Bir entity içindeki tüm proplarý kullanmak istemediðim zaman sadece kullanmak istediðim proplarý ayrý bir sýnýf içine aldýðým yapýya viewmodel deniyor. 
+Örneðin; Register iþleminde Identity kütüphanesinin verdiði AspNetUsers tablosundaki tüm proplarý kullanmak yerine 4-5 prop kullanabileceðim Models klasöründe bir viewmodel oluþturdum. (RegisterModel)
+
+* async yapýsý: Birden fazla iþlemin ayný anda birbirini beklemeden çalýþmasý durumudur. async method oluþturmak için methodun eriþim belirleyicisinin yanýna "async Task<Deðiþken Türü>" þeklinde olmalýdýr
+
+* await: Async methodlarý kullanmak için baþýna eklemem gereken bir keyword.
+
+*AddEntityFrameworkStores<>() methodu: Startup.cs de identity iþlemlerindeki cotext bilgilerini eklediðim bir methoddur.
+
+* RegisterController da constructor kullandýðým için bunun startup.cs de konfigüre edilmesi için AddIdentity<>() methodu kullanýlýr. Bu methodun içine identity ile gelen sýnýflarda özelleþtidiðiniz bir sýnýf var ise (AppUser ve AppRole gibi) onlarý parametre olarak eklemeniz sonra da IdenityDbcontext iþlemlerini yaptýðýnýz Context sýnýfýný da devamýnda "AddEntityFrameworkStores<>()" methoduna parametre olarak eklemeliyiz.
+
+*asp-validation-summary: controller tarafýnda yapýlan hatalarýn view tarafýnda gösterilmesi için kullanýlan bir helper dýr.
+	
+
 
 

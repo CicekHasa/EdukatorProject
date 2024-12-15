@@ -16,7 +16,7 @@ namespace Edukator.DataAccessLayer.Concrete
         //Bağlantı adresi buradan alınacak!
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-LBN42TA\\SQLEXPRESS01; initial Catalog=DbEdukator; integrated security= true");
+            optionsBuilder.UseSqlServer("Server=HASANCICEKK\\MSSQLSERVER01; initial Catalog=DbEdukator; integrated security= true");
         }
 
         //Dbset de verilen değişken adı Tablonun adı olur. Daha çok class'ın çoğul adı olarak konulması tercih edilir.

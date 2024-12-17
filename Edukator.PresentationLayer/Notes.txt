@@ -187,6 +187,20 @@ Sýnýflar, ihtiyacý olmayan iþlevlere sahip büyük ve geniþ arayüzler (interface) 
 * RegisterController da constructor kullandýðým için bunun startup.cs de konfigüre edilmesi için AddIdentity<>() methodu kullanýlýr. Bu methodun içine identity ile gelen sýnýflarda özelleþtidiðiniz bir sýnýf var ise (AppUser ve AppRole gibi) onlarý parametre olarak eklemeniz sonra da IdenityDbcontext iþlemlerini yaptýðýnýz Context sýnýfýný da devamýnda "AddEntityFrameworkStores<>()" methoduna parametre olarak eklemeliyiz.
 
 *asp-validation-summary: controller tarafýnda yapýlan hatalarýn view tarafýnda gösterilmesi için kullanýlan bir helper dýr.
+
+* Ana sayfadaki frontend kýsmýný DefaultController da view içine yazdýk oluþan satýrlarý Asp.Net Mvc de partiallara ayýrarak bölüyorduk ancak Asp.Net Core da partiallar yerine 'View component' ler ile bu ayýrýmlarý yapacaðýz.
+
+Arasýndaki fark nedir? 
+-En önemli ve temel fark, partial view ler tarayýcý üzerinde url kýsmýndan deðiþtirilip istenilen partial'a gidilebiliyordu. Ancak view componentler de url kýsmýndan deðiþiklik olmuyor ve bir bütün olarak geliyor. Bir nevi güvenliði de arttýrdý diyebiliriz.
+
+-View component için oluþturulan sýnýflar "ViewComponent" sýnýfýndan miras almalý!
+
+- View component çalýþtýrdýðý viewleri default bir klasör içinde arar ve oradan çalýþtýrýr. (PresentationLayer->Views->Shared->(view-component oluþturacaðýn dosya adý)->Default.cshtml(Default da zorunlu!)
+NOT: Her view-component için oluþturduðun view de "partial view" seçeneði iþaretli olmalý!
+
+-Not: Presentation katmanýnda component oluþtururken ViewsComponent klasörü altýnda oluþturduðun sýnýf adý ile ona ait views-shared-components yolunun altýnda oluþturacaðýn klasör adý ayný olmalý!!
+
+- view-component oluþturduðun method adý Invoke olmalý. View tarafýnda senkron olarak bu sýnýfý çaðýrdýðýnda içerisinde Invoke adýnda bir method arar. Opsiyonel deðil yani.
 	
 
 

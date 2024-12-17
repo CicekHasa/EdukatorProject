@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edukator.BusinessLayer.Abstract
+namespace Edukator.DataAccessLayer.Abstract
 {
-    public interface IServicesService:IGenericService<Service> 
-    {
-    }
+	public interface IFeatureDal : IGenericDal<Feature>
+	{
+	}
 }

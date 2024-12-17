@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Edukator.DataAccessLayer.EntityFramework
 {
-    public class EfServiceDal:GenericRepository<Service>, IServiceDal
+    public class EfAboutGridDal:GenericRepository<AboutGrid>, IAboutGridDal
     {
     }
 }

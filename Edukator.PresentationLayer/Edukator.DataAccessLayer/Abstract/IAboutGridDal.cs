@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Edukator.DataAccessLayer.Abstract
 {
-    public interface IServiceDal:IGenericDal<Service>
+    public interface IAboutGridDal:IGenericDal<AboutGrid>
     {
     }
 }

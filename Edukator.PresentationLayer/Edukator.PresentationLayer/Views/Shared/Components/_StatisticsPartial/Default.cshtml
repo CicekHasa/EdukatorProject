@@ -1,4 +1,4 @@
-﻿@*AÇIKLAMALAR DİNAMİK YAPALIM ÖDEV!!!*@
+﻿@model List<Edukator.EntityLayer.Concrete.Statistic>
 
 <section class="w3l-stats-main" id="stats">
     <div class="container">
@@ -11,45 +11,48 @@
             </div>
             <div class="col-lg-6 stats-content-left pl-lg-5">
 
-                <div class="stats_info counter_grid1 text-left mt-lg-5 mt-4">
-                    <div class="icon stat-icon">
-                        <p class="counter">@ViewBag.categoryCount</p>
-                    </div>
-                    <div class="stat-icon-des">
+                @foreach (var item in Model)
+                {
+                    <div class="stats_info counter_grid1 text-left mt-lg-5 mt-4">
+                        <div class="icon stat-icon">
+                            <p class="counter">@ViewBag.categoryCount</p>
+                        </div>
+                        <div class="stat-icon-des">
 
-                        <h4>
-                            Kurs Kategorileri
-                        </h4>
-                        <p class="para-stat">
-                           Yazılımdan müziğe, fotoğraftan girişime, resimden ingilizceye kadar onlarca farklı kategoride yüzlerce kurs sizlerle.
-                        </p>
+                            <h4>
+                                @item.Title1
+                            </h4>
+                            <p class="para-stat">
+                                @item.Description1
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="stats_info counter_grid text-left mt-lg-5 mt-4">
-                    <div class="icon stat-icon">
-                        <p class="counter">@ViewBag.courseCount</p>
-                    </div>
-                    <div class="stat-icon-des">
+                    <div class="stats_info counter_grid text-left mt-lg-5 mt-4">
+                        <div class="icon stat-icon">
+                            <p class="counter">@ViewBag.courseCount</p>
+                        </div>
+                        <div class="stat-icon-des">
 
-                        <h4>Kurslarımız</h4>
-                        <p class="para-stat">
-                            Alanında uzman eğitmenlerin en profesyonel çekim ortamlarında hazırladığı kurslarımız sürekli devam eden kampanyalarla sunuluyor.
-                        </p>
+                            <h4>@item.Title2</h4>
+                            <p class="para-stat">
+                                @item.Description2
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="stats_info counter_grid text-left mt-lg-5 mt-4">
-                    <div class="icon stat-icon">
-                        <p class="counter">@ViewBag.personalCount</p>
-                    </div>
-                    <div class="stat-icon-des">
+                    <div class="stats_info counter_grid text-left mt-lg-5 mt-4">
+                        <div class="icon stat-icon">
+                            <p class="counter">@ViewBag.personalCount</p>
+                        </div>
+                        <div class="stat-icon-des">
 
-                        <h4>Kullanıcılarımız</h4>
-                        <p class="para-stat">
-                           @DateTime.Now.Year yılının ilk çeyreğine yayına aldığımız sitemizde an itibariyle 1000'e yakın kullanıcıya ulaştık.
-                        </p>
-                    </div>
+                            <h4>@item.Title3</h4>
+                            <p class="para-stat">
+                                @DateTime.Now.Year @item.Description3
+                            </p>
+                        </div>
 
-                </div>
+                    </div>
+                }
             </div>
         </div>
     </div>

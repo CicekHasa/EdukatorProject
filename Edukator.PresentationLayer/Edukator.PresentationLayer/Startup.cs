@@ -48,6 +48,9 @@ namespace Edukator.PresentationLayer
             services.AddScoped<IAboutGridDal, EfAboutGridDal>();
             services.AddScoped<IAboutGridService, AboutGridManager>();
 
+            services.AddScoped<IAboutDal, EfAboutDal>();
+            services.AddScoped<IAboutService, AboutManager>();
+
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 
 

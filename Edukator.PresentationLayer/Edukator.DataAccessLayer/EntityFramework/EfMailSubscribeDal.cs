@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Edukator.DataAccessLayer.EntityFramework
 {
-    public class EfMailDal:GenericRepository<Mail>, IMailDal
+    public class EfMailSubscribeDal:GenericRepository<MailSubscribe>, IMailSubscribeDal
     {
     }
 }

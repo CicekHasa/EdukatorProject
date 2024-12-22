@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Edukator.DataAccessLayer.Abstract
 {
-    public interface IMailDal:IGenericDal<Mail>
+    public interface IMailSubscribeDal:IGenericDal<MailSubscribe>
     {
     }
 }

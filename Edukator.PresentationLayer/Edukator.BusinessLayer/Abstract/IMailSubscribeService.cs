@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Edukator.BusinessLayer.Abstract
 {
-    public interface IMailService:IGenericService<Mail>
+    public interface IMailSubscribeService:IGenericService<MailSubscribe>
     {
     }
 }

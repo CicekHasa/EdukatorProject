@@ -26,7 +26,7 @@ namespace Edukator.DataAccessLayer.Concrete
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<AboutGrid> AboutGrids { get; set; }
         public DbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
-        public DbSet<Mail> Mail { get; set; }
+        public DbSet<MailSubscribe> MailSubscribes { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Feature> Features{ get; set; }
         public DbSet<About> Abouts{ get; set; }

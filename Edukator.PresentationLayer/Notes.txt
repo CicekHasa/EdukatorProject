@@ -203,5 +203,14 @@ NOT: Her view-component için oluþturduðun view de "partial view" seçeneði iþaret
 - view-component oluþturduðun method adý Invoke olmalý. View tarafýnda senkron olarak bu sýnýfý çaðýrdýðýnda içerisinde Invoke adýnda bir method arar. Opsiyonel deðil yani.
 	
 
+- Sitenin ana sayfasýndaki mail subscribe ekleme alanýný view-componente ile deðil partial view ile yaptýk. View-componentler daha çok olan verilere gösterme üzerine iken partial view sayfadaki veriyi ekleme silme vb. iþlemleri daha kolay yapan bir þey. Bu sebeple ayný sayfada ekleme iþlemi de olduðundan dolayý o alaný view-component ile deðil de Partial ile ekledim.
+
+-asp-action="AddMailSubscribe": Asp.net core da view kýsmýnda formlar da post iþlemi sýrasýnda hangi methodun çalýþtýrmasýný belirleyen komut.
+-asp-controller="Default": Asp.net core da view kýsmýnda formlar da post iþlemi sýrasýnda hangi controller'ýn çalýþtýrmasýný belirleyen komut (bu form da eklenmeyebilir, genelde ekleniyor. Opsiyonel!).
+-@await Html.PartialAsync("~/Views/Default/AddMailSubscribe.cshtml"): Asp.net core da partial view'i çaðýrma bu þekildedir.
+
+-"An unhandled exception occurred while processing the request.
+InvalidOperationException: Unable to resolve service for type 'Edukator.BusinessLayer.Abstract.IMailSubscribeService' while attempting to activate 'Edukator.PresentationLayer.Controllers.DefaultController'.": Bu hata oluþtuðunda controller kýsmýnda oluþturduðum constructor'ý nesnesini oluþturmak için Startup.cs de ilgili entity'e ait konfigürasyonunu yazmamýþýmdýr!
+
 
 

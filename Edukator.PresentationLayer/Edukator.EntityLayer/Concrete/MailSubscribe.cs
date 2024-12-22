@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Edukator.EntityLayer.Concrete
 {
-    public class Mail
+    public class MailSubscribe
     {
-        public int MailID { get; set; }
-        public string MailName { get; set; }
+        public int MailSubscribeID { get; set; }
+        public string Mail { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace Edukator.BusinessLayer.Abstract
     public interface ICourseService: IGenericService<Course>
     {
         List<Course> TGetCourseWithCategory();
+        List<Course> TGetCoursesWithCategories();
     }
 }

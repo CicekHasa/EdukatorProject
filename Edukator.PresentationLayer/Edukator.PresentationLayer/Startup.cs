@@ -54,6 +54,9 @@ namespace Edukator.PresentationLayer
             services.AddScoped<IStatisticDal, EfStatisticDal>();
             services.AddScoped<IStatisticService, StatisticManager>();
 
+            services.AddScoped<IMailSubscribeDal, EfMailSubscribeDal>();
+            services.AddScoped<IMailSubscribeService, MailSubscribeManager>();
+
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 
 

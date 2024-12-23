@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="register-form">
 						<form  method="post">
 							<div class="fields-grid">
-								<div class="styled-input agile-styled-input-top">
+								<div class="styled-input">
 									<input type="text" asp-for="Name" required="">
 									<label>Adınız</label>
 									<span></span>
@@ -101,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="clear"> </div>
 								<label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>Kullanım şartlarını okudum <a href="#">Kabul ediyorum.</a></label>
 							</div>
-							<div class="text-warning" asp-validation-summary="ModelOnly"></div>
+							<div style="color:red" asp-validation-summary="ModelOnly"></div>
 							<input type="submit" value="Kayıt Ol">
 						</form>
 					</div>

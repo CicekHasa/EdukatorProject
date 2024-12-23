@@ -213,4 +213,25 @@ NOT: Her view-component için oluþturduðun view de "partial view" seçeneði iþaret
 InvalidOperationException: Unable to resolve service for type 'Edukator.BusinessLayer.Abstract.IMailSubscribeService' while attempting to activate 'Edukator.PresentationLayer.Controllers.DefaultController'.": Bu hata oluþtuðunda controller kýsmýnda oluþturduðum constructor'ý nesnesini oluþturmak için Startup.cs de ilgili entity'e ait konfigürasyonunu yazmamýþýmdýr!
 
 
+-IdentityErrorDescriber sýnýfý: ASP.NET Core Identity sisteminde kullanýlan hata mesajlarýný özelleþtirmek için bir mekanizma saðlar. Bu sýnýf, kimlik doðrulama iþlemlerinde oluþabilecek hatalar için varsayýlan hata mesajlarýný içerir ve gerektiðinde bu mesajlarýn deðiþtirilmesine olanak tanýr.
+
+		Amaçlarý nelerdir;
+	* Hata Mesajlarýný Özelleþtirme: Kullanýcýlara daha anlaþýlýr, kullanýcý dostu veya farklý dillerde hata mesajlarý sunmak için varsayýlan mesajlarý deðiþtirmenizi saðlar.
+	* Kendi Ýþ Mantýðýnýza Uygun Hale Getirme: Varsayýlan hata mesajlarý yerine, uygulamanýzýn gereksinimlerine uygun açýklamalar ekleyebilirsiniz.
+	* Yerelleþtirme (Localization): Çoklu dil desteði sunuyorsanýz, hata mesajlarýný kullanýcýlarýn tercih ettikleri dile göre özelleþtirebilirsiniz.
+
+-IdentityErrorDescriber'ý bir sýnýfta miras alýp ilgili methodlarýn override'ýný oluþturduktan sonra startup.cs de configürasyon yapýlmasý gerek.
+
+-AddErrorDescriber<IdentityErrorDescriber sýnýfýný miras olarak kullandýðýn sýnýf>(): Bu method startup.cs de identity kullanýmýnda oluþturduðumuz configürasyona (services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>()) eklenmeli.
+
+-SigninManager sýnýfý: SignInManager sýnýfý, kimlik doðrulama iþlemlerini yönetmek için kullanýlan bir sýnýftýr. Kullanýcýlarýn oturum açma, oturumu sonlandýrma, iki faktörlü kimlik doðrulama ve oturum yenileme gibi iþlemlerini gerçekleþtirir.
+
+SignInManager sýnýfý, ASP.NET Core Identity sisteminin bir parçasýdýr ve genellikle kullanýcý yönetiminde UserManager sýnýfýyla birlikte kullanýlýr.
+
+	SignInManagerdaki bazý methodlar;
+	* public virtual Task<SignInResult> PasswordSignInAsync(string userName, string password, bool isPersistent, bool lockoutOnFailure): Bu method giriþ yapmak için kullanýlýr. parametreler de kullanýcý adý, þifre, isPersistent (giriþ yaptýktan sonra hatýrlansýn mý), lockoutOnFailure(Hatalý þifreleme de sayaç sayma mekeanizmasý çalýþsýn mý?)
+
+-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />: View kýsmýnda form oluþtururken kullandýðýn class larýn çalýþmasý için bu kýsmý view kýsmýnda kullanman gerekir.
+
+
 

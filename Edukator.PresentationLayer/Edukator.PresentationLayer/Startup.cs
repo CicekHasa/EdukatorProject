@@ -4,6 +4,7 @@ using Edukator.DataAccessLayer.Abstract;
 using Edukator.DataAccessLayer.Concrete;
 using Edukator.DataAccessLayer.EntityFramework;
 using Edukator.EntityLayer.Concrete;
+using Edukator.PresentationLayer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,7 @@ namespace Edukator.PresentationLayer
         {
             services.AddDbContext<Context>();//Veri kaynaðý ekleniyor.
             //Kayýt ekleniyor aþaðýda. Mapleme gibi düþünülebilir.
+
             //ICategoryDal çaðýrýldýðýnda EfCategoryDal'ý çalýþtýrsýn.
             services.AddScoped<ICategoryDal, EfCategoryDal>();//ICategoryService çaðýrýldýðýnda CategoryManager'ý çalýþtýrsýn.
             services.AddScoped<ICategoryService, CategoryManager>();
@@ -57,7 +59,7 @@ namespace Edukator.PresentationLayer
             services.AddScoped<IMailSubscribeDal, EfMailSubscribeDal>();
             services.AddScoped<IMailSubscribeService, MailSubscribeManager>();
 
-            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
 
             services.AddControllersWithViews();

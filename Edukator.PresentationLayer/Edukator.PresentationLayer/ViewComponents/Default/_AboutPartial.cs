@@ -1,10 +1,9 @@
 ﻿using Edukator.BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
-using System.Xml.Linq;
 
-namespace Edukator.PresentationLayer.ViewComponents
+namespace Edukator.PresentationLayer.ViewComponents.Default
 {
-    public class _AboutPartial:ViewComponent
+    public class _AboutPartial : ViewComponent
     {
         private readonly IAboutService _aboutService;
 

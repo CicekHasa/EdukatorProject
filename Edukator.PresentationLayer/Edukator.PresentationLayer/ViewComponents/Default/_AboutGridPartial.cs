@@ -1,9 +1,9 @@
 ﻿using Edukator.BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Edukator.PresentationLayer.ViewComponents
+namespace Edukator.PresentationLayer.ViewComponents.Default
 {
-    public class _AboutGridPartial:ViewComponent
+    public class _AboutGridPartial : ViewComponent
     {
         private readonly IAboutGridService _aboutGridService;
 

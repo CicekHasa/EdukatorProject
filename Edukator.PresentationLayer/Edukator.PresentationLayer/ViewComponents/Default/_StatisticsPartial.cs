@@ -3,16 +3,15 @@ using Edukator.DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
-namespace Edukator.PresentationLayer.ViewComponents
+namespace Edukator.PresentationLayer.ViewComponents.Default
 {
-
-    public class _StatisticsPartial:ViewComponent
+    public class _StatisticsPartial : ViewComponent
     {
         private readonly IStatisticService _statisticService;
 
         public _StatisticsPartial(IStatisticService statisticService)
         {
-            _statisticService= statisticService;
+            _statisticService = statisticService;
         }
         Context context = new Context();
         public IViewComponentResult Invoke()

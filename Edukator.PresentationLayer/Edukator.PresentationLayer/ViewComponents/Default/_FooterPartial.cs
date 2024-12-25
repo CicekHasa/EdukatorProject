@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Edukator.PresentationLayer.ViewComponents
+namespace Edukator.PresentationLayer.ViewComponents.Default
 {
-    public class _TestimonialsPartial:ViewComponent
+    public class _FooterPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

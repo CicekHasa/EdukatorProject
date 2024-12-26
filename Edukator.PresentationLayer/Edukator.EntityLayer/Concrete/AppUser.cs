@@ -15,5 +15,7 @@ namespace Edukator.EntityLayer.Concrete
         public string City { get; set; }
         [StringLength(100)]//100 karakterlik sınır olsun alttaki prop için!
         public string ImageUrl { get; set; }
+        public List<CourseRegister> CourseRegisters { get; set; }//CourseRegister tablosu ile ilişkilendiriyoruz.
+
     }
 }

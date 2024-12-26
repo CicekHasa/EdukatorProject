@@ -20,5 +20,7 @@ namespace Edukator.EntityLayer.Concrete
 
         //Db ye Sadece CategoryID alanı yansır. Category türünde oluşturulan alan db ye yansımaz!
 
+        public List<CourseRegister> CourseRegisters { get; set; }//CourseRegister tablosu ile ilişkilendiriyoruz.
+
     }
 }

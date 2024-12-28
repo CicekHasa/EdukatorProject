@@ -62,6 +62,9 @@ namespace Edukator.PresentationLayer
             services.AddScoped<ICourseRegisterDal, EfCourseRegisterDal>();
             services.AddScoped<ICourseRegisterService, CourseRegisterManager>();
 
+            services.AddScoped<IContactDal, EfContactDal>();
+            services.AddScoped<IContactService, ContactManager>();
+
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
 

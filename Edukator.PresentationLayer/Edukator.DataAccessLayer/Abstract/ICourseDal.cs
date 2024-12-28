@@ -22,5 +22,6 @@ namespace Edukator.DataAccessLayer.Abstract
         //Sadece bu entity'ye özel bir method! bu sebeple GenericRepo içinde yazmadık.
         List<Course> GetCoursesWithCategory();
         List<Course> GetCoursesWithCategories();
+        List<Course> GetLast5Course();
     }
 }

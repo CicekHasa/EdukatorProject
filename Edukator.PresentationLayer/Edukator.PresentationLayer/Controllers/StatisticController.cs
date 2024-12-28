@@ -9,7 +9,7 @@ namespace Edukator.PresentationLayer.Controllers
         //EF de LINQ Çalışması
         public IActionResult Index()
         {
-            Context context = new Context();
+            using var context = new Context();
             ViewBag.totalCategory = context.Categories.Count();
             ViewBag.totalCourse = context.Courses.Count();
             ViewBag.totalCoursePrice = context.Courses.Sum(x => x.Price);

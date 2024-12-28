@@ -13,9 +13,10 @@ namespace Edukator.PresentationLayer.ViewComponents.Default
         {
             _statisticService = statisticService;
         }
-        Context context = new Context();
+        
         public IViewComponentResult Invoke()
         {
+            using var context = new Context();
             ViewBag.categoryCount = context.Categories.Count();
             ViewBag.courseCount = context.Courses.Count();
             ViewBag.personalCount = 685;

@@ -13,9 +13,9 @@ namespace Edukator.DataAccessLayer.EntityFramework
 {
     public class EfCourseRegisterDal : GenericRepository<CourseRegister>, ICourseRegisterDal
     {
-        Context context = new Context();
         public List<CourseRegister> CourseRegisterListWithCourseAndUsers()
         {
+            using var context = new Context();
             //CourseRegister'a AppUser ve Course'u dahile ettim.
             var values = context.CourseRegisters
     .Include(x => x.Course)

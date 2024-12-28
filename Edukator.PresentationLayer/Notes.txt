@@ -233,5 +233,10 @@ SignInManager sýnýfý, ASP.NET Core Identity sisteminin bir parçasýdýr ve genelli
 
 -<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />: View kýsmýnda form oluþtururken kullandýðýn class larýn çalýþmasý için bu kýsmý view kýsmýnda kullanman gerekir.
 
+-using  var deðiþken adý= new Sýnýf(); ile Sýnýf deðiþken adý = new Sýnýf(); arasýndaki farklar;
+
+	* using ile oluþturulan nesnelerde nesne ile iþ bittikten sonra otomatik olarak temizlenmesini saðlar. Kendi otomatik olarak Dispose methodunu çaðýrarak belleði temizler ancak diðer kullanýmda belleði temizlemez. Manuel olarak senin Dispose methodunu çaðýrman gerek!
+	* using ile oluþturulan deðiþken sadece o scope içerisinde kullanýlabilir. Diðer oluþturulan deðiþken ise oluþturduðun yere göre method ya da sýnýf boyunca kullanýlabilir.
+
 
 

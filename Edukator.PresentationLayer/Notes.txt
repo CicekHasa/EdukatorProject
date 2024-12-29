@@ -238,5 +238,18 @@ SignInManager sýnýfý, ASP.NET Core Identity sisteminin bir parçasýdýr ve genelli
 	* using ile oluþturulan nesnelerde nesne ile iþ bittikten sonra otomatik olarak temizlenmesini saðlar. Kendi otomatik olarak Dispose methodunu çaðýrarak belleði temizler ancak diðer kullanýmda belleði temizlemez. Manuel olarak senin Dispose methodunu çaðýrman gerek!
 	* using ile oluþturulan deðiþken sadece o scope içerisinde kullanýlabilir. Diðer oluþturulan deðiþken ise oluþturduðun yere göre method ya da sýnýf boyunca kullanýlabilir.
 
+- Areas Nedir? Areas, bir ASP.NET Core uygulamasýný modüler bir yapýya bölmek için kullanýlan bir özelliktir. Özellikle büyük projelerde, farklý bölümleri (örneðin, Admin paneli, Kullanýcý arayüzü, API gibi) düzenli bir þekilde ayrýþtýrmaya yardýmcý olur. Areas, bir uygulamanýn içinde mantýksal olarak baðýmsýz modüller oluþturmanýzý saðlar.
+
+-Middleware Nedir? Middleware, bir ASP.NET Core uygulamasýnda HTTP isteklerini iþleyen ve yanýtlarý döndüren yapý taþlarýdýr. Uygulamanýn istek/yanýt iþleme hattýnda yer alan bir bileþen olarak tanýmlanýr. Middleware bileþenleri, gelen bir HTTP isteði üzerinde iþlem yapabilir, bir sonraki middleware bileþenine iletebilir veya doðrudan yanýt döndürebilir.
+
+-[Area("Area_Name")]: Controller oluþturduðun sýnýf Areas içerisindeki bir modülden geliyorsa o sýnýfýn üst kýsmýnda Area attribütünü eklemen gerek. Yoksa o sayfa çalýþmaz!
+
+-[Route]: Bu attribute, bir ASP.NET Core uygulamasýnda bir action (metot) veya controller için özel URL yolu tanýmlamak amacýyla kullanýlan bir özellik (attribute) olup, routing (yönlendirme) iþlemini kontrol etmeye yarar. Bir HTTP isteðinin belirli bir controller'a veya action'a yönlendirilmesini saðlar.
+
+- UseAuthentication(): UseAuthentication() metodu, ASP.NET Core uygulamasýnda kimlik doðrulama (authentication) özelliðini etkinleþtirmek için kullanýlan bir middleware'dir. Bu metodu eklemek, uygulamanýzýn gelen HTTP isteklerini kimlik doðrulama kontrollerine tabi tutmasýný saðlar. Startup.cs de app.UseAuthorization(); methodunun üst kýsmýna eklenmesi gerekmektedir.
+
+-ViewImports.cshtml: Asp.net Core da formlarda kullandýðýmýz asp-for gibi tag helper larý kullanmamýzý saðlayan bir dosyadýr.
+Eðer bir view klasöründe tag helper kullanamýyorsak o view'in bulunduðu views klasöründe ViewImports dosyasý mevcut deðildir. Onu eklememiz gerekir.
+
 
 

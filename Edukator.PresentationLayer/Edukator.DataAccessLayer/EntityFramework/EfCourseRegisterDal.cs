@@ -25,5 +25,12 @@ namespace Edukator.DataAccessLayer.EntityFramework
     .ToList();
             return values;
         }
+
+        public List<CourseRegister> CourseRegisterListWithCourseByUser(int id)
+        {
+            using var context= new Context();
+            var values = context.CourseRegisters.Where(y => y.AppUser.Id == id).Include(x => x.Course).ToList();
+            return values;
+        }
     }
 }

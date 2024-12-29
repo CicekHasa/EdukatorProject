@@ -11,5 +11,6 @@ namespace Edukator.DataAccessLayer.Abstract
     {
         //Bu entity'e özgü bir method
         List<CourseRegister> CourseRegisterListWithCourseAndUsers();
+        List<CourseRegister> CourseRegisterListWithCourseByUser(int id);
     }
 }

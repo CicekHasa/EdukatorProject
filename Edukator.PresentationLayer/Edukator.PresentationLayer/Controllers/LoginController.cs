@@ -24,10 +24,10 @@ namespace Edukator.PresentationLayer.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(LoginViewModel model)
         {
-            var result = await _signInManager.PasswordSignInAsync(model.UserName,model.Password,false,false);
+            var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false, false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Course");
+                return RedirectToAction("Index", "MyCourse", new { area = "Member" });//Login olunduktan sonra login olan kişiye ait yere git.
             }
             return View();
         }

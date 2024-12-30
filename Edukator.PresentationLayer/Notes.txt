@@ -251,5 +251,8 @@ SignInManager sýnýfý, ASP.NET Core Identity sisteminin bir parçasýdýr ve genelli
 -ViewImports.cshtml: Asp.net Core da formlarda kullandýðýmýz asp-for gibi tag helper larý kullanmamýzý saðlayan bir dosyadýr.
 Eðer bir view klasöründe tag helper kullanamýyorsak o view'in bulunduðu views klasöründe ViewImports dosyasý mevcut deðildir. Onu eklememiz gerekir.
 
+-Users.ToList(): Identity de oluþturduðum userlarý listelemek için UserManager sýnýfýnda nesne türettikten sonra o nesne ile Users özelliðini Tolist() methodu ile tüm kullanýcýlara ulaþabilirim.(UsersController.cs örnek)
+
+-Rol Atamasý: Identity de AspNetUsers tablosundaki kullanýcýlara role atamasý yapmak , kullanýcýnýn uygulama üzerinde yetkilendirilmesini saðlamak ve eriþim kontrolünü daha kolay bir þekilde yönetmek için kullanýlýr.
 
 

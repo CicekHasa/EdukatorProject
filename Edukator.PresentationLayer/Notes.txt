@@ -260,5 +260,14 @@ Eðer kullanýlmazsa checkbox kutularýnýn hepsi default boþ gelir.(UseRoleAssign.c
 
 -Tempdata[]: Bir http isteðinde gelen datayý kýsa süreliðine tutup kullanmaya yarayan bir mekanizmadýr. Http isteði sonlandýðý zaman otomatik olarak silinir.
 
+-IFormFile: Dosya iþlemlerinde seçilen dosyayý temsil etmek için kullanýlan bir interface'dir. (UserEditViewModel.cs)
+-Directory.GetCurrentDirectory(): Directory sýnýfýndaki bir methottur. Projenin þu anki çalýþma dizinini (working directory) döndürür.
+-Path.GetExtension(): Path sýnýfýndaki bir methoddur. Ýçinde seçtiðimiz resmin filename özelliðini parametre olarak gönderdiðimizde bize o dosyanýn uzantýsýný verir. (SettingsController.cs)
+- Guid.NewGuid() : Guid sýnfýndan türetilen bir methoddur. Benzersiz bir deðer dönmesi için kullanýlýr.
+-FileStream sýnýfý: Dosyalar üzerinde giriþ/çýkýþ iþlemleri yapmak için kullanýlýr.
+-CopyToAsync(): IFormFile nesnesinin içeriðini asenkron olarak bir FileStream nesnesine kopyalar.
+-HashPassword(): Parolalar hashlenip kayýt edilmesi gerekir. Benim ekranda yazdýðým deðeri bu metot hashleyip IdentityUser sýnýfýndaki PasswordHash'e atamamý saðlar.
+-enctype="multipart/form-data" özelliði: Html kýsmýnda dosya yükleme iþlemleri yapmak için kullanýlan bir komuttur. (Settings/Index.cshtml)
+
 
 

@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadPartial")
+
+<body>
+    <!--header-->
+    @await Component.InvokeAsync("_NavbarPartial")
+    <!--/header-->
+    <!-- breadcrumb -->
+    @await Component.InvokeAsync("_ContactBreadCrumbPartial")
+    <!--//breadcrumb-->
+    <!-- contacts-5-grid -->
+    @await Html.PartialAsync("ContactSendMessagePartial.cshtml");
+
+    @await Component.InvokeAsync("_ContactMapPartial")
+    <!--/footer-->
+    @await Component.InvokeAsync("_FooterPartial")
+    <!-- //footer -->
+    <!-- Js scripts -->
+    <!-- move top -->
+    @await Component.InvokeAsync("_ScriptPartial")
+
+</body>
+
+</html>

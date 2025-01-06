@@ -15,25 +15,25 @@ Author URL: http://w3layouts.com
 
 <body>
     <!--header-->
-@await Component.InvokeAsync("_NavbarPartial");
+@await Component.InvokeAsync("_NavbarPartial")
     <!--/header-->
     <!--/Banner-Start-->
-    @await Component.InvokeAsync("_FeaturePartial");
+    @await Component.InvokeAsync("_FeaturePartial")
     <!--//Banner-End-->
     <!-- /bottom-grids-->
     @await Component.InvokeAsync("_AboutGridPartial")
     <!-- //bottom-grids-->
     <!--/about-section -->
-    @await Component.InvokeAsync("_AboutPartial");
+    @await Component.InvokeAsync("_AboutPartial")
     <!--//about-section -->
     <!--/home-stats-->
     @await Component.InvokeAsync("_StatisticsPartial")
     <!--//home-stats-->
     <!--/popular-Courses-->
-    @await Component.InvokeAsync("_CoursePartial");
+    @await Component.InvokeAsync("_CoursePartial")
     <!--//popular-Courses-->
     <!--/testimonials-->
-    @await Component.InvokeAsync("_TestimonialsPartial");
+    @await Component.InvokeAsync("_TestimonialsPartial")
     <!-- //testimonials -->
     <!--/subscribe-->
     @await Html.PartialAsync("~/Views/Default/AddMailSubscribe.cshtml")

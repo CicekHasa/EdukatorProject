@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadPartial")
+
+<body>
+    <!--header-->
+    @await Component.InvokeAsync("_NavbarPartial")
+    <!--/header-->
+    <!-- breadcrumb -->
+    @await Component.InvokeAsync("_BreadCrumbPartial")
+    <!--//breadcrumb-->
+    <!--/w3l-aboutblock1-->
+   @await Component.InvokeAsync("_AboutBlockPartial")
+    <!--//w3l-aboutblock1-->
+    <!-- features-section -->
+    @await Component.InvokeAsync("_AboutFeaturePartial")
+    <!-- features section -->
+    <!--/team-sec-->
+    @await Component.InvokeAsync("_AboutTeamsPartial")
+    <!--//team-sec-->
+    <!--/progress-->
+    @await Component.InvokeAsync("_AboutProgressPartial")
+    <!--//progress-->
+    <!--/w3l-project-->
+    @await Component.InvokeAsync("_AboutJoinPartial")
+    <!--//w3l-project-->
+    <!--/footer-->
+    @await Component.InvokeAsync("_FooterPartial")
+    <!-- //footer -->
+    <!-- Js scripts -->
+    <!-- move top -->
+    @await Component.InvokeAsync("_ScriptPartial")
+
+</body>
+
+</html>

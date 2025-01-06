@@ -269,5 +269,11 @@ Eðer kullanýlmazsa checkbox kutularýnýn hepsi default boþ gelir.(UseRoleAssign.c
 -HashPassword(): Parolalar hashlenip kayýt edilmesi gerekir. Benim ekranda yazdýðým deðeri bu metot hashleyip IdentityUser sýnýfýndaki PasswordHash'e atamamý saðlar.
 -enctype="multipart/form-data" özelliði: Html kýsmýnda dosya yükleme iþlemleri yapmak için kullanýlan bir komuttur. (Settings/Index.cshtml)
 
+-Bir controller içerisindeki view de çaðýrdýðýmýz view-componenti ayný kullaným þekli ile baþka bir controller içerisindeki viewde de çaðýrabiliriz.
+
+- Contact sayfasýndaki Index'in View kýsmýnda "@{Layout = null;}" ifadesini en üst satýra yazmayýnca (layout kullanmadýðým için!) ekran görüntüsünde bozukluk oldu.
+
+
+
 
 

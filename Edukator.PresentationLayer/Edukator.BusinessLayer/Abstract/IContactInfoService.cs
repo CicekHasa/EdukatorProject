@@ -9,5 +9,6 @@ namespace Edukator.BusinessLayer.Abstract
 {
     public interface IContactInfoService: IGenericService<ContactInfo>
     {
+        ContactInfo TGetLast2Record();
     }
 }

@@ -67,6 +67,9 @@ namespace Edukator.PresentationLayer
 
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
+            services.AddScoped<IContactInfoDal, EfContactInfoDal>();
+            services.AddScoped<IContactInfoService, ContactInfoManager>();
+
 
             services.AddControllersWithViews();
         }

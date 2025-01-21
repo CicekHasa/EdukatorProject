@@ -70,6 +70,9 @@ namespace Edukator.PresentationLayer
             services.AddScoped<IContactInfoDal, EfContactInfoDal>();
             services.AddScoped<IContactInfoService, ContactInfoManager>();
 
+            services.AddScoped<IMessageDal,EfMessageDal>();
+            services.AddScoped<IMessageService, MessageManager>();
+
 
             services.AddControllersWithViews();
         }

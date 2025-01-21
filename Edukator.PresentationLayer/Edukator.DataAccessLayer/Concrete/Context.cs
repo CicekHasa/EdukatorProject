@@ -32,5 +32,6 @@ namespace Edukator.DataAccessLayer.Concrete
         public DbSet<About> Abouts{ get; set; }
         public DbSet<Statistic> Statistics{ get; set; }
         public DbSet<CourseRegister> CourseRegisters{ get; set; }
+        public DbSet<Message> Messages{ get; set; }
     }
 }

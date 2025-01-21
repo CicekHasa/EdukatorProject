@@ -205,7 +205,7 @@ NOT: Her view-component için oluþturduðun view de "partial view" seçeneði iþaret
 
 - Sitenin ana sayfasýndaki mail subscribe ekleme alanýný view-componente ile deðil partial view ile yaptýk. View-componentler daha çok olan verilere gösterme üzerine iken partial view sayfadaki veriyi ekleme silme vb. iþlemleri daha kolay yapan bir þey. Bu sebeple ayný sayfada ekleme iþlemi de olduðundan dolayý o alaný view-component ile deðil de Partial ile ekledim.
 
--asp-action="AddMailSubscribe": Asp.net core da view kýsmýnda formlar da post iþlemi sýrasýnda hangi methodun çalýþtýrmasýný belirleyen komut.
+-asp-action="AddMailSubscribe": Asp.net core da view kýsmýnda formlar da post iþlemi sýrasýnda hangi methodun çalýþtýrmasýný belirleyen komut. Bu komut view kýsmýnda ekli olmazsa post iþleminde bir method çalýþtýrmaz.
 -asp-controller="Default": Asp.net core da view kýsmýnda formlar da post iþlemi sýrasýnda hangi controller'ýn çalýþtýrmasýný belirleyen komut (bu form da eklenmeyebilir, genelde ekleniyor. Opsiyonel!).
 -@await Html.PartialAsync("~/Views/Default/AddMailSubscribe.cshtml"): Asp.net core da partial view'i çaðýrma bu þekildedir.
 

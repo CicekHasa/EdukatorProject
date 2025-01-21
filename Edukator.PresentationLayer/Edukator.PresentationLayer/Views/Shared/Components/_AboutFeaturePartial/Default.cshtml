@@ -1,45 +1,30 @@
-﻿<section class="w3l-features py-5" id="work">
+﻿@model List<Edukator.EntityLayer.Concrete.SiteFeature>
+
+<section class="w3l-features py-5" id="work">
     <div class="container py-lg-5 py-md-4 py-2">
         <div class="row main-cont-wthree-2 align-items-center">
             <div class="col-lg-6 feature-grid-left pr-lg-5">
-                <h5 class="title-subw3hny">Why Choose Us</h5>
+                <h5 class="title-subw3hny">Neden Bizi Seçmelisiniz</h5>
                 <h3 class="title-w3l mb-4">
-                    Our Mission is to Provide a World‑class <span class="inn-text">Education</span>
+                    Misyonumuz Dünya Standartlarında Eğitim Sağlamaktır
                 </h3>
                 <p class="text-para">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Fusce eget ex fermentum, ultricies nisi ac sed,
-                    lacinia est. Quisque ut lectus consequat, venenatis eros et, sed commodo risus. Nullam sit
-                    amet laoreet elit. Suspendisse non init magnaa velit efficitur.
+                    Hastayla ilgilenmek, hastayı takip etmek önemli ama işin ve acının çok olduğu bir dönemde olacak bu. Ultricies hariç mayadan soğuğa ihtiyacı var ama lacinia. Herkes tarifi, zehirli erosları ve kahkahanın avantajını okumayı sever. Dikkat etmeye gerek yok. Büyük bir fark yaratmıyor.
                 </p>
-                <a href="/About/Index/" class="btn btn-style btn-primary mt-lg-5 mt-4">Read More</a>
+                <a href="/About/Index/" class="btn btn-style btn-primary mt-lg-5 mt-4">Devamını Oku</a>
             </div>
             <div class="col-lg-6 feature-grid-right mt-lg-0 mt-5 pl-lg-5">
                 <div class="call-grids-w3 d-grid">
-                    <div class="grids-1 box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-microscope"></i>
+                    @foreach (var item in Model)
+                    {
+                        <div class="grids-1 box-wrap">
+                            <div class="icon">
+                                <i class="@item.Icon"></i>
+                            </div>
+                            <h4><a href="/About/Index/" class="title-head">@item.Title</a></h4>
                         </div>
-                        <h4><a href="/About/Index/" class="title-head">Group Seminars</a></h4>
-                    </div>
-                    <div class="grids-1 box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <h4><a href="/About/Index/" class="title-head">Trending Courses</a></h4>
-                    </div>
-                    <div class="grids-1 box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-school"></i>
-                        </div>
-                        <h4><a href="/About/Index/" class="title-head">Large Library</a></h4>
-                    </div>
-                    <div class="grids-1 box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h4><a href="/About/Index/" class="title-head">Expert Teachers</a></h4>
-                    </div>
+                    }
+
                 </div>
             </div>
         </div>

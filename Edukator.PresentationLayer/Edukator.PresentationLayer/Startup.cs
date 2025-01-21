@@ -73,6 +73,9 @@ namespace Edukator.PresentationLayer
             services.AddScoped<IMessageDal,EfMessageDal>();
             services.AddScoped<IMessageService, MessageManager>();
 
+            services.AddScoped<ISiteFeatureDal, EfSiteFeatureDal>();
+            services.AddScoped<ISiteFeatureService, SiteFeatureManager>();
+
 
             services.AddControllersWithViews();
         }

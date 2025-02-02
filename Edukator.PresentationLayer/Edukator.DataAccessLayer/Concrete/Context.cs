@@ -11,7 +11,7 @@ namespace Edukator.DataAccessLayer.Concrete
 {
     //AppUser entitysini ekleme sebebim AspNetUser tablosuna AppUser entity'si içindeki alanları eklemesi için!
     //AppRole ve int parametrelerini de ekleme sebebim, AspNetUser iel AspNetRole tablolarındaki id alanlarının string yerine int gelmesi için!
-    public class Context : IdentityDbContext<AppUser,AppRole,int>//(IdentityDbContext de DbContext sınıfından miras alıyor.)
+    public class Context : IdentityDbContext<AppUser, AppRole, int>//(IdentityDbContext de DbContext sınıfından miras alıyor.)
     {
         //Bağlantı adresi buradan alınacak!
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,11 +28,12 @@ namespace Edukator.DataAccessLayer.Concrete
         public DbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
         public DbSet<MailSubscribe> MailSubscribes { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
-        public DbSet<Feature> Features{ get; set; }
-        public DbSet<About> Abouts{ get; set; }
-        public DbSet<Statistic> Statistics{ get; set; }
-        public DbSet<CourseRegister> CourseRegisters{ get; set; }
-        public DbSet<Message> Messages{ get; set; }
-        public DbSet<SiteFeature> SiteFeatures{ get; set; }
+        public DbSet<Feature> Features { get; set; }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Statistic> Statistics { get; set; }
+        public DbSet<CourseRegister> CourseRegisters { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<SiteFeature> SiteFeatures { get; set; }
+        public DbSet<Teammate> Teammates { get; set; }
     }
 }

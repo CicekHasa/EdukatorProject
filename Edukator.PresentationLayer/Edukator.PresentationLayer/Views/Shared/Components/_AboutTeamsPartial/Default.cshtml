@@ -1,106 +1,39 @@
-﻿<section class="w3l-team-main team py-5" id="team">
+﻿@using Edukator.EntityLayer.Concrete
+@model List<Teammate>
+
+<section class="w3l-team-main team py-5" id="team">
     <div class="container py-lg-5">
-        <h5 class="title-subw3hny mb-1 text-center">Our Team</h5>
-        <h3 class="title-w3l text-center">Meet Our <span class="inn-text">Teachers</span></h3>
+        <h5 class="title-subw3hny mb-1 text-center">Ekibimiz</h5>
+        <h3 class="title-w3l text-center">Öğretmenlerimizle Tanışın</h3>
         <div class="row team-row">
-            <div class="col-lg-3 col-6 team-wrap mt-5">
-                <div class="team-member text-center">
-                    <div class="team-img">
-                        <img src="~/Edukator-Starter/assets/images/team1.jpg" alt="" class="radius-image">
-                        <div class="overlay-team">
-                            <div class="team-details text-center">
-                                <div class="socials mt-20">
-                                    <a href="#url">
-                                        <span class="fab fa-facebook-f"></span>
-                                    </a>
-                                    <a href="#url">
-                                        <span class="fab fa-twitter"></span>
-                                    </a>
-                                    <a href="#url">
-                                        <span class="fab fa-linkedin-in"></span>
-                                    </a>
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-6 team-wrap mt-5">
+                    <div class="team-member text-center">
+                        <div class="team-img">
+                            <img src="@item.ImageUrl" alt="" class="radius-image">
+                            <div class="overlay-team">
+                                <div class="team-details text-center">
+                                    <div class="socials mt-20">
+                                        <a href="#url">
+                                            <span class="fab fa-facebook-f"></span>
+                                        </a>
+                                        <a href="#url">
+                                            <span class="fab fa-twitter"></span>
+                                        </a>
+                                        <a href="#url">
+                                            <span class="fab fa-linkedin-in"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <a href="#url" class="team-title">@item.NameSurname</a>
+                        <p>@item.JobTitle</p>
                     </div>
-                    <a href="#url" class="team-title">Lawrence Petrie</a>
-                    <p>Director</p>
                 </div>
-            </div>
-            <!-- end team member -->
-            <div class="col-lg-3 col-6 team-wrap mt-5">
-                <div class="team-member text-center">
-                    <div class="team-img">
-                        <img src="~/Edukator-Starter/assets/images/team2.jpg" alt="" class="radius-image">
-                        <div class="overlay-team">
-                            <div class="team-details text-center">
-                                <div class="socials mt-20">
-                                    <a href="#url">
-                                        <span class="fab fa-facebook-f"></span>
-                                    </a>
-                                    <a href="#url">
-                                        <span class="fab fa-twitter"></span>
-                                    </a>
-                                    <a href="#url">
-                                        <span class="fab fa-linkedin-in"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#url" class="team-title">Jack Peters</a>
-                    <p>Managing Director</p>
-                </div>
-            </div>
-            <!-- end team member -->
-            <div class="col-lg-3 col-6 team-wrap mt-5">
-                <div class="team-member text-center">
-                    <div class="team-img">
-                        <img src="~/Edukator-Starter/assets/images/team3.jpg" alt="" class="radius-image">
-                        <div class="overlay-team">
-                            <div class="team-details text-center">
-                                <div class="socials mt-20">
-                                    <a href="#url">
-                                        <span class="fab fa-facebook-f"></span>
-                                    </a>
-                                    <a href="#url">
-                                        <span class="fab fa-twitter"></span>
-                                    </a>
-                                    <a href="#url">
-                                        <span class="fab fa-linkedin-in"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#url" class="team-title">Anna Phillips</a>
-                    <p>Teacher</p>
-                </div>
-            </div>
-            <!-- end team member -->
-            <div class="col-lg-3 col-6 team-wrap mt-5">
-                <div class="team-member last text-center">
-                    <div class="team-img">
-                        <img src="~/Edukator-Starter/assets/images/team4.jpg" alt="" class="radius-image">
-                        <div class="overlay-team">
-                            <div class="team-details text-center">
-                                <div class="socials mt-20">
-                                    <a href="#url">
-                                        <span class="fab fa-facebook-f"></span>
-                                    </a>
-                                    <a href="#url">
-                                        <span class="fab fa-twitter"></span>
-                                    </a>
-                                    <a href="#url">
-                                        <span class="fab fa-linkedin-in"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#url" class="team-title">Roland Walker</a>
-                    <p>Teacher</p>
-                </div>
-            </div>
+            }
+
         </div>
 </section>

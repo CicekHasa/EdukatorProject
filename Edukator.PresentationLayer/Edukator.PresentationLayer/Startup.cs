@@ -76,6 +76,9 @@ namespace Edukator.PresentationLayer
             services.AddScoped<ISiteFeatureDal, EfSiteFeatureDal>();
             services.AddScoped<ISiteFeatureService, SiteFeatureManager>();
 
+            services.AddScoped<ITeammateDal, EfTeammateDal>();
+            services.AddScoped<ITeammateService, TeammateManager>();
+
 
             services.AddControllersWithViews();
         }

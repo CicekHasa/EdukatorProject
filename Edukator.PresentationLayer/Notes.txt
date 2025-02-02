@@ -273,6 +273,8 @@ Eðer kullanýlmazsa checkbox kutularýnýn hepsi default boþ gelir.(UseRoleAssign.c
 
 - Contact sayfasýndaki Index'in View kýsmýnda "@{Layout = null;}" ifadesini en üst satýra yazmayýnca (layout kullanmadýðým için!) ekran görüntüsünde bozukluk oldu.
 
+-Db ye ui daki bir resmin path'ini kayýt ederken kodda ~(diyez) kullandýðýn gibi path'in baþýnda ~ iþareti eklememelisin!
+
 
 
 
